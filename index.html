@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lottie Test!</title>
+    <style>
+      body {
+        min-height: 2600px;
+      }
+      .animation {
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animation"></div>
+    <script src="lottie.js"></script>
+    <script>
+      let animationContainer = document.querySelector(".animation");
+      let windowScroll = window.scrollY;
+      lottie.loadAnimation({
+        container: animationContainer,
+        renderer: "svg",
+        loop: true,
+        autoplay: false,
+        path: "data.json"
+      });
+
+      // Scroll
+      window.addEventListener("scroll", e => {
+        scroll_position = window.scrollY;
+        lottie.goToAndStop(scroll_position / 8, true);
+      });
+    </script>
+  </body>
+</html>
