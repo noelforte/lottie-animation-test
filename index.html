@@ -9,9 +9,10 @@
         min-height: 2600px;
       }
       .animation {
-        width: 100%;
+        height: 100%;
         top: 0;
         left: 0;
+        right: 0;
         position: fixed;
       }
     </style>
@@ -33,7 +34,7 @@
       // Scroll
       window.addEventListener("scroll", e => {
         scroll_position = window.scrollY;
-        lottie.goToAndStop(scroll_position / 8, true);
+        lottie.goToAndStop(scroll_position / 10, true);
       });
     </script>
   </body>
